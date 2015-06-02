@@ -76,6 +76,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\CodeViewOutput.cs" />
+    <Compile Include="ExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Helpers\IconCreator.cs" />
     <Compile Include="Helpers\ObjectIconRenderer.cs" />
     <Compile Include="Helpers\ResponsiveOperation.cs" />

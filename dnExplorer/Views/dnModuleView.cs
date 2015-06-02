@@ -38,6 +38,12 @@ namespace dnExplorer.Views {
 
 			ctxMenu.Items.Add(new ToolStripSeparator());
 
+			var export = new ToolStripMenuItem("Export");
+			export.Click += ShowExportWindow;
+			ctxMenu.Items.Add(export);
+
+			ctxMenu.Items.Add(new ToolStripSeparator());
+
 			var remove = new ToolStripMenuItem("Remove", Resources.GetResource<Image>("Icons.delete.png"));
 			remove.Click += Remove;
 			ctxMenu.Items.Add(remove);
@@ -93,6 +99,12 @@ namespace dnExplorer.Views {
 		void Remove(object sender, EventArgs e) {
 			var model = sender.GetContextMenuModel<dnModuleModel>();
 			App.Modules.RemoveModule(model.Module);
+		}
+
+		void ShowExportWindow(object sender, EventArgs e) {
+			var model = sender.GetContextMenuModel<dnModuleModel>();
+			var form = new ExportForm(model.Module);
+			form.ShowDialog();
 		}
 	}
 }
